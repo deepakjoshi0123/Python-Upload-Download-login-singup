@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div>
+    {% for item in items %} 
+        <ul>
+            <li>
+                {{ item.name.rsplit('.',1)[0]}} | <a href={{url_for('download',id=item.id)}}>Download</a>
+            </li>
+        </ul>
+    {% endfor %} 
+</div>
+<span>
+    <a href={{url_for('index')}}>More</a>
+</span>
+{% endblock content %}
